@@ -1,15 +1,15 @@
-#include "HAL/hal_max96853.h"
+#include "app/app_serializer.h"
+// #include "hal/iic_device.h"
 
 
 
 
 int main() 
 {
-    hw_max96853_t *pMax96853 = getMax96853();
-    
+    HAL_IIC_Device_Prepare();
 
-    pMax96853->open();
-    printf("%s\r\n", pMax96853->common.getName());
+    Serializer_Init();
+
 
     return 0;
 }
